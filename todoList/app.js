@@ -138,7 +138,4 @@ app.post("/delete", async (req, res) => {
 });
 
 
-app.listen(process.env.PORT || 8000, async () => {
-
-    console.log("Listening on port 8000");
-});
+app.listen(process.env.PORT, function () {});
