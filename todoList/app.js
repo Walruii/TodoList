@@ -6,7 +6,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const https = require("https");
 
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost:27017/todoListDB", { useNewUrlParser: true });
+mongoose.connect("mongodb+srv://admin-wal:test123@cluster0.xhjmdky.mongodb.net/?retryWrites=true&w=majority", { useNewUrlParser: true });
 
 const itemsSchema = {
     name: String
