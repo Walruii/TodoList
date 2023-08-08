@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
@@ -6,7 +7,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const https = require("https");
 
 const mongoose = require("mongoose");
-mongoose.connect("mongodb+srv://admin-wal:test123@cluster0.xhjmdky.mongodb.net/?retryWrites=true&w=majority", { useNewUrlParser: true });
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true });
 
 const itemsSchema = {
     name: String
@@ -138,4 +139,4 @@ app.post("/delete", async (req, res) => {
 });
 
 
-app.listen(3000, function () {});
+app.listen(process.env.PORT || 3000, function () {});
